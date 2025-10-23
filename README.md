@@ -1,10 +1,10 @@
-#This is my week 1 project submission for the AI track at ENG basecamp
+## This is my week 1 project submission for the AI track at ENG basecamp
 
 
 ---
 
 
-#Week 1 – Getting Started with Python and Data Thinking
+# Week 1 – Getting Started with Python and Data Thinking
 
 ### Focus
 This task focuses on building a foundation in Python programming and understanding how data science works. It involves learning basic Python, working with data packages (NumPy and Pandas), and performing an introductory data analysis task.
