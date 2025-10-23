@@ -1,3 +1,5 @@
+#This is my week 1 project submission for the AI track at ENG basecamp
+
 # Week 1 – Getting Started with Python and Data Thinking
 
 ### Focus
@@ -12,7 +14,7 @@ The objective of this week’s challenge was to:
 3. Perform basic data analysis and summary statistics using Python packages.
 4. Push the completed notebook to GitHub for submission.
 
-The dataset used was the **Titanic dataset**, a well-known dataset for beginners in data science, which contains passenger information such as age, gender, ticket class, and whether they survived.
+I used the **Titanic dataset**, a well-known dataset for beginners in AI/ML, which contains passenger information such as age, gender, ticket class, and whether they survived.
 
 ---
 
@@ -80,6 +82,7 @@ Final summary statistics were generated to describe the dataset and key insights
 ---
 
 ## Conclusion
-This week’s task provided hands-on experience with Python for data science.  
+This week’s task provided me a
+with hands-on experience with Python for data/ML.  
 By loading, exploring, cleaning, and visualizing a real dataset, the project introduced key concepts of data analysis using Pandas and NumPy.  
-The notebook demonstrates how data scientists begin by understanding the structure and quality of data before moving to deeper modeling and prediction tasks.
+The notebook demonstrates how we begin by understanding the structure and quality of data before moving to deeper modeling and prediction tasks.
