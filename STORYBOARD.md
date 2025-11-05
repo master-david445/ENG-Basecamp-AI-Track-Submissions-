@@ -1,128 +1,145 @@
-# 🌍 Week 3 Storyboard – "Telling a Story with Data"
+# 🌍 Week 3 Storyboard – *Telling a Story with Data*
 
 ## 🎯 Objective
 
 The goal of this week’s challenge was to **tell a story using data**.
 I chose to explore **global CO₂ emissions**, focusing on how emissions have changed over time and how they differ across countries and sectors.
 
-The core question guiding this analysis was:
+The main question guiding this analysis was:
 
 > **How have global CO₂ emissions changed over time, and which countries contribute the most?**
 
-From there, I developed sub-questions that helped shape the flow of my story:
+From this, I developed supporting questions to build a complete story:
 
-* How have global CO₂ emissions evolved over the years?
-* Which countries contribute the most to total emissions?
-* How do emissions differ by sector?
+* How have global CO₂ emissions changed between 2019 and 2023?
+* Which countries contribute the most to total CO₂ emissions?
+* Which sectors are responsible for the largest share of emissions globally?
+* How do sectoral emissions vary from country to country?
+* Which sectors show the strongest growth or decline trends across time?
 * How does each country’s CO₂ profile differ by sector?
 
 ---
 
-## 🧹 Step 1: Data Cleaning
+##  Step 1: Data Cleaning
 
 The dataset contained the following columns:
 `date`, `country`, `value`, `timestamp`, and `sector`.
 
-### Cleaning actions:
+### Cleaning Actions
 
-* Checked for **missing values** — none were critical enough to drop entire columns.
-* Verified **data types** — converted `date` to datetime and `value` to numeric.
-* Removed **duplicates** and ensured each `(country, sector, date)` pair was unique.
-* Confirmed all emissions values were positive and reasonable.
-* No major outliers were detected beyond normal country-to-country variation.
+* Converted `date` to datetime and ensured `value` was numeric.
+* Checked for missing values — none were critical.
+* Removed duplicates and verified each `(country, sector, date)` pair was unique.
+* Verified all emission values were positive.
+* Renamed and standardized sector names (e.g., “Power sector” → “Power”).
 
-✅ Result: A clean and structured dataset ready for analysis.
+✅ **Result:** A clean, structured dataset covering 2019–2023, ready for visualization.
 
 ---
 
-## 📊 Step 2: Analysis & Visuals
+##  Step 2: Analysis & Visuals
 
-### 1️⃣ Global Emissions Over Time
+### 1️⃣ Global CO₂ Emissions Over Time
 
-A static line plot showing worldwide CO₂ emissions growth from early records to recent years.
-**Insight:** Global emissions have grown dramatically after 1950, reflecting industrialization and urban growth. Although some countries show declines, the global total still trends upward.
+A **line chart** showing total global CO₂ emissions between 2019–2023.
+**Insight:** Despite fluctuations, the trend remains high, with emissions rebounding post-pandemic in 2021 and stabilizing slightly afterward.
 
 ---
 
 ### 2️⃣ Top Emitting Countries
 
-A bar chart ranking the top 10 countries by total emissions.
-**Insight:** The U.S., China, and India dominate emissions globally, but each follows different historical paths. Developed nations are beginning to stabilize while emerging economies rise rapidly.
+A **bar chart** ranking the top 10 emitting countries in 2023.
+**Insight:** China, “WORLD”, and “ROW” (Rest of World) are the largest contributors globally.
 
 ---
 
-### 3️⃣ Emissions by Sector Over Time (Animated)
+### Sectoral Contributions
 
-An animated bar chart shows how different sectors contributed over time.
-**Insight:** Energy and Industry are consistently the top emitters, while Transport and Agriculture remain smaller but significant contributors.
-
----
-
-### 4️⃣ Country CO₂ Profiles by Sector (Interactive)
-
-An interactive stacked bar chart comparing countries’ emissions by sector.
-**Insight:** Each country’s profile reflects its economy — industrial nations emit mainly from manufacturing and energy, while others have higher shares from transport or agriculture.
+A **stacked bar chart** showing CO₂ emissions by sector.
+**Insight:** The **Power** sector is the largest emitter, followed by **Industry**, showing where global reduction efforts should focus.
 
 ---
 
-### 5️⃣ Optional: Interactive Global Map
+###  Sectoral Trends Over Time
 
-A bubble map displaying emissions per country geographically.
-**Insight:** It provides a clear visual of where emissions are concentrated — mainly in industrialized and densely populated regions.
+A **multi-line plot** showing each sector’s emission trend over time.
+**Insight:** The **Power** and **Industry** sectors show similar growth, while **Residential** and **Ground Transport** remain stable. **Domestic Aviation** fluctuates slightly.
+
+---
+
+###  Global Emission Rate by Country (Interactive)
+
+An **interactive Plotly chart** lets users explore each country’s emission rate from 2019–2023.
+**Insight:** Countries like China and India continue rising, while emissions in the U.S. and parts of Europe have plateaued or slightly declined.
+
+---
+
+### 
+Country-Specific Sectoral Breakdown (Interactive)
+
+An **interactive stacked bar chart** showing emissions by sector for each country.
+**Insight:** Country profiles differ based on economy — industrial nations are dominated by power and manufacturing, while others see more emissions from transport and residential use.
 
 ---
 
 ## 🧠 Step 3: Key Insights
 
-* **Emissions are still rising** despite global awareness and policies.
-* **Economic structure drives emission types** — industrial vs service economies differ sharply.
-* **Sector analysis** is vital for designing practical emission-reduction strategies.
-* **Global cooperation** is needed since emissions in one region affect the entire planet.
+* **Power and Industry** are the dominant global emission sources.
+* Emissions **rebounded sharply** after 2020.
+* Sectoral trends show **economic structure strongly affects emission type**.
+* **Targeted policies per sector** could yield faster emission cuts.
 
 ---
 
-## ⚙️ Step 4: Tools Used
+##  Step 4: Tools Used
 
-* **Python** (Colab)
-* **Pandas** for data wrangling
-* **Matplotlib & Seaborn** for static visuals
-* **Plotly Express** for interactive and animated charts
-
----
-
-## 🧩 Step 5: Challenges & Errors Faced
-
-* **Data Formatting:** Some dates were strings, requiring careful conversion to datetime.
-* **Plotly Animation Lag:** The animated charts initially ran slowly until data was grouped and aggregated properly.
-* **Missing Sector Labels:** A few records had inconsistent sector names that needed standardization.
-* **File Size Issues:** The interactive visuals occasionally froze in Colab due to large data frames — solved by filtering for top 10 countries.
+* **Python** (GitHub Codespaces / Colab)
+* **Pandas** – Data wrangling and cleaning
+* **Matplotlib & Seaborn** – Static visualizations
+* **Plotly Express** – Interactive visuals
+* **Streamlit** – Mini dashboard application
 
 ---
 
-## 🚀 Step 6: What I Learned
+##  Step 5: Challenges & Errors Faced
 
-This challenge helped me understand:
+* **File Upload Limitations** – Couldn’t upload CSV directly in Codespaces; solved by adding it to the GitHub repo and pulling via Git.
+* **`pandas.errors.EmptyDataError`** – Occurred when referencing an empty or invalid CSV path.
+* **Inconsistent Sector Names** – Required renaming for proper grouping.
+* **Animation Lag in Plotly** – Solved by filtering dataset and using caching.
+* **Streamlit Deployment Issues** – Fixed by creating a proper `requirements.txt` file and testing locally before deployment.
 
-* How to **form a narrative** around data instead of just presenting numbers.
-* The importance of **cleaning, aggregating, and structuring** data before visualization.
-* How **different visualization types** (static vs interactive) reveal different insights.
-* How to think like a **data storyteller**, connecting findings to real-world meaning.
+---
+
+##  Step 6: What I Learned
+
+* How to **tell a story** through sequential data visuals.
+* The importance of **data cleaning** before visualization.
+* How to use **interactive dashboards** to make data exploration easier.
+* The difference between **static vs interactive** insights.
+* How to **deploy** a simple dashboard using Streamlit.
+* How **sectoral data analysis** helps identify key emission drivers.
 
 ---
 
-## 🧭 Step 7: Final Summary
+##  Step 7: Final Summary
 
-Global CO₂ emissions tell a clear story of growth, industrial expansion, and inequality in contribution. While industrialized nations shaped the early emission surge, developing nations now drive recent growth as they industrialize.
+Global CO₂ emissions remain one of the world’s biggest sustainability challenges.
+Between 2019–2023, emissions stayed high, with **Power** and **Industry** driving most of the increase.
+Understanding how each **country and sector** contributes is key to effective climate action.
 
-The challenge ahead is twofold: reduce emissions globally while supporting fair economic development. Data like this helps illuminate *where* and *how* the world can act next.
+Data storytelling transforms numbers into meaning — showing *where* and *how* we can act next.
 
 ---
+
+##  Deliverables
+
+* `Week3_visualization.ipynb`
+* `Week3_storyboard.md`
+* `app.py` – Streamlit Dashboard
+* Screenshots / GIFs of visuals
 
 **Author:** Oreoluwa David
 **Project:** ENG Basecamp – Week 3 Challenge
 **Topic:** Global CO₂ Emissions Storytelling with Data
-**Deliverables:**
 
-* `Week3_visualization.ipynb`
-* `Week3_storyboard.md`
-* Interactive visuals & screenshots
